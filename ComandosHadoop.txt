@@ -1,0 +1,14 @@
+------------- Salida de los mappers:
+cat datos.txt | python ./miMapper.py
+
+------------- Entrada de los combiners:
+cat datos.txt | python ./miMapper | sort -k1,1
+
+------------- Salida de los combiners:
+cat datos.txt | python ./miMapper | sort -k1,1 | python ./miCombiner.py
+
+------------- Entrada de los reducers:
+cat datos.txt | python ./miMapper | sort -k1,1 | python ./miCombiner.py | sort -k1,1
+
+------------- Salida del reducer tras ejecutar un combiner:
+cat datos.txt | python ./miMapper | sort -k1,1 | python ./miCombiner.py | sort -k1,1 | python ./miReducer.py
